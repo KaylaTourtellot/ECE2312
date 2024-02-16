@@ -79,53 +79,53 @@ plt.show()
 
 ##Question 6, Time Delay
 x2, sr = librosa.load("sound2.wav")
-con_left = np.concatenate([np.zeros(6), x2[0:-6]])
+delay_left = np.concatenate([np.zeros(6), x2[0:-6]])
 write("sound2.wav", sr, np.array(x2))
 #0ms
-con_left = np.concatenate([np.zeros(6), x2[0:-6]])
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros(6), x2[0:-6]])
+ar = np.array([x2,delay_left])
 write("sound2_0ms.wav", sr, ar.T)
 #1ms
-con_left = np.concatenate([np.zeros((int(sr*0.001))), x2[0:-(int(sr*0.001))]])
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.001))), x2[0:-(int(sr*0.001))]])
+ar = np.array([x2,delay_left])
 write("sound2_1ms.wav", sr, ar.T)
 #10ms
-con_left = np.concatenate([np.zeros((int(sr*0.01))), x2[0:-(int(sr*0.01))]])
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.01))), x2[0:-(int(sr*0.01))]])
+ar = np.array([x2,delay_left])
 write("sound2_10ms.wav", sr, ar.T)
 #100ms
-con_left = np.concatenate([np.zeros((int(sr*0.1))), x2[0:-(int(sr*0.1))]]) 
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.1))), x2[0:-(int(sr*0.1))]]) 
+ar = np.array([x2,delay_left])
 write("sound2_100ms.wav", sr, ar.T)
 #head
-con_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])
+ar = np.array([x2,delay_left])
 write("sound2_avghead.wav", sr, ar.T)
 
 ##Question 7 Attenuation
 #0ms
 #1.5
-con_left = np.concatenate([np.zeros(6), x2[0:-6]]) * 0.75
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros(6), x2[0:-6]]) * 0.75
+ar = np.array([x2,delay_left])
 write("0ms-1.5db.wav", sr, ar.T)
 #3
-con_left = np.concatenate([np.zeros(6), x2[0:-6]]) * 0.5
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros(6), x2[0:-6]]) * 0.5
+ar = np.array([x2,delay_left])
 write("0ms-3db.wav", sr, ar.T)
 #6
-con_left = np.concatenate([np.zeros(6), x2[0:-6]]) * 0.25
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros(6), x2[0:-6]]) * 0.25
+ar = np.array([x2,delay_left])
 write("0ms-6db.wav", sr, ar.T)
 #head
 #1.5
-con_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])*0.75
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])*0.75
+ar = np.array([x2,delay_left])
 write("518us-1.5db.wav", sr, ar.T)
 #3
-con_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])*0.5
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])*0.5
+ar = np.array([x2,delay_left])
 write("518us-3db.wav", sr, ar.T)
 #6
-con_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])*0.25
-ar = np.array([x2,con_left])
+delay_left = np.concatenate([np.zeros((int(sr*0.000518))), x2[0:-(int(sr*0.000518))]])*0.25
+ar = np.array([x2,delay_left])
 write("518us-6db.wav", sr, ar.T)
